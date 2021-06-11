@@ -21,9 +21,9 @@ const SignInForm = ({ form }) => {
         status: '',
         message: '',
     });
-    const [{}, dispatch] = useStateValue();
+    const [, dispatch] = useStateValue();
 
-    const signIn = () => {
+    const signInWithGoogle = () => {
         auth.signInWithPopup(provider)
             .then(result => {
                 dispatch({
@@ -103,7 +103,7 @@ const SignInForm = ({ form }) => {
                             Log in
                         </FormButton>
                         or
-                        <FormButton type="danger" htmlType="submit" className="login-form-button" onClick={signIn}>
+                        <FormButton type="danger" htmlType="submit" className="login-form-button" onClick={signInWithGoogle}>
                             Continue with Google
                         </FormButton>
                     </div>
